@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="page-header">
+      <h1>Create a post</h1>
+    </div>
+    <form class="blog-post-form" #blogPostForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        
+        <input type="text" id="title" name="title" placeholder="Title" [(ngModel)]="blogPost.title" required>
+      </div>
+      <div class="form-group">
+        
+        <textarea id="content" name="content" placeholder="Content" [(ngModel)]="blogPost.content" required></textarea>
+      </div>
+      <div class="form-group">
+        
+        <input type="text" id="author" name="author" placeholder="Author Name" [(ngModel)]="blogPost.author" required>
+      </div>
+      <div class="form-group">
+
+        <input type="date" id="date" name="date" [(ngModel)]="blogPost.date" required>
+      </div>
+      <div class="form-group">
+
+        <input type="text" id="tags" name="tags" placeholder="Tags" [(ngModel)]="blogPost.tags" required>
+      </div>
+      <div class="form-group">
+
+        <input type="url" id="url" name="url" placeholder="Url" [(ngModel)]="blogPost.url">
+      </div>
+      <div class="form-actions">
+        <button id="submit" type="submit" [disabled]="blogPostForm.invalid">Submit</button>
+        <button routerLink="/posts">Back</button>
+      </div>
+    </form>
+  </div>
+  

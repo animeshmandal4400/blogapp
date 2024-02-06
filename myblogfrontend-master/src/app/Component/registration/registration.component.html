@@ -1,0 +1,39 @@
+<div class="registration-container">
+  <div class="card">
+    <!-- Registration Form and Display Picture in the same flex row -->
+    <div class="card-content">
+      <!-- Left side: Registration Form -->
+      <div class="card-left">
+        <h1>Create an Account</h1>
+        <h3>Join our community today!</h3>
+        <form class="login-form" (ngSubmit)="onSubmit(registrationForm.value)" #registrationForm="ngForm">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter Username" name="username" [(ngModel)]="reg.username" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter Password" name="password" [(ngModel)]="reg.password" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" name="confirmPassword" [(ngModel)]="reg.cnfrmPassword" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter Email" name="email" [(ngModel)]="reg.email" class="form-control" required>
+          </div>
+          <div class="error-message" *ngIf="registrationForm.invalid && (registrationForm.dirty || registrationForm.touched)">
+            Please fill out all the required fields and ensure passwords match.
+          </div>
+          <button type="submit" [disabled]="registrationForm.invalid" class="btn btn-success">Register</button>
+        </form>
+      </div>
+
+      <!-- Right side: Display Picture (Optional) -->
+      <div class="card-right">
+        <img src="../../../assets/login-display2.jpg" alt="Display Picture" class="display-picture">
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: Ishani-api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: Ishani-login
+          uri: lb://Ishani-login
+          predicates:
+          - Path=/auth/**
+        - id: Ishani-dashboard
+          uri: lb://Ishani-dashboard
+          predicates:
+          - Path=/dashboard/**
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+          corsConfigurations:
+            '[/**]':
+              allowedOrigins: "*"
+              allowedMethods: "*"
+              allowedHeaders: "*"
+server:
+  port: 9093
+eureka:
+  instance:
+    hostname: localhost

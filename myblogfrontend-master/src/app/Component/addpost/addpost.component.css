@@ -1,0 +1,75 @@
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.post-details {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-bottom: 1px solid #ccc; /* Underline effect */
+    font-size: 18px; /* Default font size */
+    font-weight: normal; /* Default font weight */
+    background: transparent; /* Transparent background */
+    transition: border-bottom-color 0.3s; /* Smooth transition for underline color */
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+    outline: none;
+    border-bottom-color: #436850; /* Underline color on focus */
+    font-size: 24px; /* Increase font size on focus */
+    font-weight: bold; /* Increase font weight on focus */
+}
+
+button {
+    padding: 15px 30px;
+    background-color: #436850;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.form-group{
+    margin-bottom: 25px;
+}
+
+#submit {
+    margin-right: 10px;
+}
+button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+button:hover {
+    background-color: #436850;
+}
+
+.form-actions {
+    text-align: right;
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+}
