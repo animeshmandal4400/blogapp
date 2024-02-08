@@ -1,53 +1,119 @@
-/* .a{
-  
-  background-color: red;
-} */
 .container {
-    margin: 100px 10px;
-    padding: 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
 
-    border-radius: 5px;
-    text-align: center;
-  }
-  .news-container {
-    display: inline-flex;
-  }
- 
-  .news-card {
-    width: 500px;
-    height: 400px;
-    margin: 10px 10px;
-    border-radius: 10px;
-    background-color: #f8f9f9;
-    border: 5px solid black;
-  }
-  .course-card {
-    width: 220px;
-    height: 320px;
-    margin: 10px 10px;
-    background-color: #f8f9f9;
-    border: 3px solid black;
-  }
- 
-  .news-buttons {
-    display: flex;
-    justify-content: center;
-  }
-  .btn {
-    width: 200px;
-    height: 40px;
-    border: none;
-    margin: 5px 3px;
-  }
- 
-  .btn-read {
-    background-color: #ec7063;
-  }
-  .btn-detail {
-    background-color: #abebc6;
-  }
-  h1{
-    font-family: 'Poppins', sans-serif;
-    font-size: 4 rem;
-    font-weight: 600;
-  }
+.news-card {
+  width: 400px;
+  margin: 20px 20px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+  
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 200px; 
+}
+
+.card-details {
+  padding: 20px;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right:15px;
+  background-color: rgb(73, 94, 54); 
+  color: #fff; 
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.author-name {
+  font-weight: bold;
+}
+
+.date {
+  color: gray;
+  font-weight: 500;
+}
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.card-actions {
+  margin-top: auto;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.3s ease; 
+}
+
+.btn-comment {
+  background-color: #d5e2ea;
+}
+
+.btn-detail {
+  background-color: #2ecc71;
+}
+
+.animated:hover {
+  transform: translateY(-3px); 
+}
+
+.card-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-text.ellipsis {
+  -webkit-line-clamp: 4; 
+  text-overflow: ellipsis;
+}
+
+.ellipsis-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 70%);
+  cursor: pointer;
+  padding: 0 0.25rem;
+}

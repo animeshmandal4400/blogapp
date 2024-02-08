@@ -1,39 +1,39 @@
-
-<div class="container" style="width:auto; margin: auto; ">
-
+<div class="container">
     <br>
     <ng-container *ngFor="let data of Data">
-
-        <div class="news-container">
-
-            <div class="news-card" style="background-image: url(./assets/e.avif);">
-
-                <div>
-
-                    <img [src]="data.url" style="width:70%; height:230px;">
-
-                </div>
-
-                <div class="card-body">
-
-                <p class="card-text"><b> {{data.title}}</b></p>
-
-                <p class="card-text"> {{data.author}}</p>
-
-                </div>
-
-                <div class="news-buttons">
-
-                    <button class="btn btn-read" routerLink='/comment/{{data.id}}'>Add Comment</button>
-
-                    <button class="btn btn-detail" routerLink = '/detail/{{data.id}}'>Details</button>
-
-                </div>
-
+        <div class="news-card">
+            <div class="card-image">
+                <img [src]="data.url ? data.url : '../../../assets/blog-post.jpg'" alt="Post Image">
             </div>
+            <div class="card-details">
+                <div class="author-info">
+                    <div class="avatar">{{ data.author.charAt(0).toUpperCase() }}</div>
+                    <div class="author-name">
+                        <p>{{ data.author }}</p>
+                        <p class="date">{{ data.date }}</p>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">{{ data.title }}</h2>
+                    <p class="card-text" [class.ellipsis]="isContentOverflow(data.content)">
+                        {{ data.content }}
+                        <span class="ellipsis-overlay" *ngIf="isContentOverflow(data.content)" [routerLink]="['/detail', data.id]"></span>
+                    </p>
+                </div>
+                
 
-        </div>  
-
+                <div class="card-actions">
+                    <hr>
+                    <div class="actions">
+                        <button class="btn btn-comment animated" routerLink='/comment/{{ data.id }}'>
+                            <i class="fas fa-comment"></i> Comment
+                        </button>
+                        <button class="btn btn-detail animated" routerLink='/detail/{{ data.id }}'>
+                            <i class="fas fa-eye"></i> View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </ng-container>
-
 </div>

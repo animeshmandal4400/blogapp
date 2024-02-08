@@ -30,4 +30,37 @@ export class PostListComponent implements OnInit {
     });
   }
 
+  maxHeight = 2; // Maximum number of lines
+
+  isContentOverflow(content: string): boolean {
+    const lineHeight = 1.2; // Adjust this value based on your design
+    const maxHeight = this.maxHeight * lineHeight;
+    const contentHeight = this.getLineHeight(content);
+    return contentHeight > maxHeight;
+  }
+
+  truncateContent(content: string): string {
+    const maxContentLength = this.maxHeight * 50; // Adjust this value based on your design
+    if (content.length > maxContentLength) {
+      return content.slice(0, maxContentLength) + '...';
+    }
+    return content;
+  }
+
+  private getLineHeight(content: string): number {
+    const tempElem = document.createElement('div');
+    tempElem.innerHTML = content;
+    tempElem.style.position = 'absolute';
+    tempElem.style.visibility = 'hidden';
+    tempElem.style.whiteSpace = 'pre-wrap';
+    tempElem.style.width = '100%';
+    tempElem.style.lineHeight = '1.2'; // Adjust this value based on your design
+    document.body.appendChild(tempElem);
+    const height = tempElem.offsetHeight;
+    document.body.removeChild(tempElem);
+    return height;
+  }
+
+  
+
 }

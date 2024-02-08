@@ -1,6 +1,6 @@
-<div class="ab" style="background-image: url(./assets/f.jpg);" >
+<div class="ab" >
 <div class="card" style="width: 50%;" >
-    <img src="{{ Blogs.url }}" class="card-img-top" alt="...">
+    <img [src]="Blogs.url ? Blogs.url : '../../../assets/blog-post.jpg'" class="card-img-top" alt="...">
     <div class="card-body" >
       <p class="card-text"><strong>Id: </strong>{{ Blogs.id}}</p>
       <p class="card-text"><strong>Title: </strong> {{ Blogs.title }}</p>

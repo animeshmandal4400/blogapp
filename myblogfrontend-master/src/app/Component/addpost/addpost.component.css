@@ -20,20 +20,21 @@ textarea {
     width: 100%;
     padding: 15px;
     border: none;
-    border-bottom: 1px solid #ccc; /* Underline effect */
-    font-size: 18px; /* Default font size */
-    font-weight: normal; /* Default font weight */
-    background: transparent; /* Transparent background */
-    transition: border-bottom-color 0.3s; /* Smooth transition for underline color */
+    border-bottom: 1px solid #ccc; 
+    font-size: 18px;
+    font-weight: normal; 
+    background: transparent; 
+    transition: border-bottom-color 0.3s; 
 }
 
 input[type="text"]:focus,
 input[type="url"]:focus,
+input[type="date"]:focus,
 textarea:focus {
     outline: none;
-    border-bottom-color: #436850; /* Underline color on focus */
-    font-size: 24px; /* Increase font size on focus */
-    font-weight: bold; /* Increase font weight on focus */
+    border-bottom-color: #436850;
+    font-size: 24px; 
+    font-weight: bold; 
 }
 
 button {
@@ -67,7 +68,6 @@ button:hover {
     text-align: right;
 }
 
-/* Additional styles for responsiveness */
 @media (max-width: 600px) {
     .container {
         padding: 10px;

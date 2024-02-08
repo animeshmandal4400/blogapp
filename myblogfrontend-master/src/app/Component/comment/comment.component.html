@@ -1,24 +1,25 @@
-<div class="ab" style="background-image: url(./assets/j.jpg);">
-<div class="comments-container">
-    <h3 style="color: white;">Comments</h3>
-    <div *ngFor="let com of comm" class="comment-item" style="color: white;">
-        <strong><h5><b>Name:</b> {{ com.name }}  </h5></strong>
-        <strong><h5><b>Comment:</b> {{ com.comment }} </h5></strong>
-    <p>{{ com.text }}</p>
+<div class="ab">
+    <div class="comments-container">
+      <h3>Comments</h3>
+      <div *ngFor="let com of comm" class="comment-item">
+        <strong>Name:</strong> {{ com.name }}<br>
+        <strong>Comment:</strong> {{ com.comment }}<br>
+        <p>{{ com.text }}</p>
+      </div>
+      <div class="add-comment">
+        <h4>Add a Comment</h4>
+        <form>
+          <div class="form-group">
+            <label for="author">Name</label>
+            <input type="text" id="name" name="name" [(ngModel)]="comme.name" required>
+          </div>
+          <div class="form-group">
+            <label for="commentText">Comment</label>
+            <textarea (blur)="onChangeFileField($event)" id="commentText" name="commentText" [(ngModel)]="comme.comment" required></textarea>
+          </div>
+          <button type="submit" (click)="addComm()">Submit Comment</button>
+        </form>
+      </div>
     </div>
-    <div class="add-comment">
-    <h4 style="color: white;">Add a Comment</h4>
-    <form>
-    <div class="form-group">
-    <label for="author" style="color: white;">Name</label>
-    <input type="text" id="name" name="name" [(ngModel)]="comme.name" required>
-    </div>
-    <div class="form-group">
-    <label for="commentText" style="color: white;">Comment</label>
-    <textarea (blur)=" onChangeFileField($event)" id="commentText" name="commentText" [(ngModel)]="comme.comment" required></textarea>
-    </div>
-    <button type="submit" (click)="addComm()">Submit Comment</button>
-    </form>
-    </div>
-    </div>
-    </div>
+  </div>
+  

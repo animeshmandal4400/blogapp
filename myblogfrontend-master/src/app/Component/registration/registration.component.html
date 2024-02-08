@@ -23,7 +23,7 @@
             <label for="email">Email:</label>
             <input type="email" id="email" placeholder="Enter Email" name="email" [(ngModel)]="reg.email" class="form-control" required>
           </div>
-          <div class="error-message" *ngIf="registrationForm.invalid && (registrationForm.dirty || registrationForm.touched)">
+          <div class="alert alert-danger" role="alert" *ngIf="registrationForm.invalid && (registrationForm.dirty || registrationForm.touched)">
             Please fill out all the required fields and ensure passwords match.
           </div>
           <button type="submit" [disabled]="registrationForm.invalid" class="btn btn-success">Register</button>

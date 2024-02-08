@@ -1,115 +1,112 @@
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  /* Card styling */
-  .card {
-    width: 90%;
-    max-width: 1200px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Card content: Form and Display Picture in a flex row */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Card styling */
+.card {
+  width: 60%;
+  max-width: 90vw; /* Adjust maximum width for responsiveness */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card content: Form and Display Picture in a flex row */
+.card-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Left side: Form styling */
+.card-left {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 50%; /* Adjust max-width for better layout on larger screens */
+}
+
+.card-left h1 {
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.card-left h3 {
+  font-size: 25px;
+  margin-bottom: 32px;
+  color: #666;
+}
+
+.login-form .form-group {
+  margin-bottom: 24px;
+}
+
+.login-form .form-control {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 18px;
+}
+
+.register-link {
+  margin-top: 15px;
+  cursor:pointer;
+  color: #666;
+}
+
+.register-link:hover{
+  color:darkgreen;
+}
+
+/* Right side: Display Picture styling */
+.card-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%; /* Adjust max-width for better layout on larger screens */
+}
+
+.display-picture {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
   .card-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  /* Left side: Form styling */
-  .card-left {
-    flex: 1;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .card-left h1 {
-    font-weight: 800;
-    margin-bottom: 16px;
-    color: #333;
-  }
-  
-  .card-left h3 {
-    font-size: 25px;
-    margin-bottom: 32px;
-    color: #666;
-  }
-  
-  .login-form .form-group {
-    margin-bottom: 24px;
-  }
-  
-  .login-form .form-control {
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    font-size: 18px;
-  }
-  
-  .register-link {
-    margin-top: 15px;
-    cursor:pointer;
-    color: #666;
-  }
-
-  .register-link:hover{
-    color:darkgreen;
-
-  }
-
-
-  
-  /* Right side: Display Picture styling */
-  .card-right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-  }
-  
-  .display-picture {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .card-content {
       flex-direction: column;
-    }
-  
-    .card-right {
+  }
+
+  .card-right {
       display: none; /* Hide display picture on mobile */
-    }
-  
-    .card-left {
+  }
+
+  .card-left {
       padding: 32px;
-    }
-  
-    .card-left h3 {
+      max-width: 100%; /* Adjust max-width for better layout on smaller screens */
+  }
+
+  .card-left h3 {
       font-size: 24px;
-    }
-  
-    .login-form .form-control {
+  }
+
+  .login-form .form-control {
       padding: 10px;
       font-size: 16px;
-    }
-  
-    .btn-primary {
+  }
+
+  .btn-primary {
       padding: 10px 20px;
       font-size: 16px;
-    }
   }
-  
+}
